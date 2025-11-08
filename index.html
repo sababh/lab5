@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>NBA Stats</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header class="app-header">
+    <div class="wrap">
+        <h1>NBA Player Stats <span class="chip">Lab 05</span></h1>
+        <label id="dark-toggle" class="toggle" title="Toggle dark mode">
+            <input type="checkbox" aria-label="Dark mode"/>
+            <span>🌙 Dark mode</span>
+        </label>
+    </div>
+</header>
+
+<main class="wrap">
+    <div class="toolbar">
+        <input type="search" id="search" placeholder="Search players by name or team…" aria-label="Search players"/>
+        <select id="team-filter" aria-label="Filter by team">
+            <option value="all">All teams</option>
+            <!-- Populated in JS -->
+        </select>
+    </div>
+
+    <section class="card">
+        <div class="table-wrap">
+            <table id="player-stats">
+                <thead>
+                <tr>
+                    <th data-key="name">Name</th>
+                    <th data-key="team">Team</th>
+                    <th data-key="points" data-type="number">Points</th>
+                    <th data-key="rebounds" data-type="number">Rebounds</th>
+                    <th data-key="assists" data-type="number">Assists</th>
+                </tr>
+                </thead>
+                <tbody id="player-rows">
+                <!-- rows from JS -->
+                </tbody>
+            </table>
+        </div>
+        <div class="footer">
+            <span id="count">0 players</span>
+            <span class="hint">Tip: click headers to sort</span>
+        </div>
+    </section>
+</main>
+
+<!-- Your big data array -->
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
